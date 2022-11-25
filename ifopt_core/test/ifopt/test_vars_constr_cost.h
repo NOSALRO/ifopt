@@ -128,7 +128,7 @@ class ExConstraint : public ConstraintSet {
   // approximate the derivatives by finite differences and not overwrite this
   // function, e.g. in ipopt.cc::use_jacobian_approximation_ = true
   // Attention: see the parent class function for important information on sparsity pattern.
-  void FillJacobianBlock(std::string var_set,
+  void FillJacobianBlock(const std::string& var_set,
                          Jacobian& jac_block) const override
   {
     // must fill only that submatrix of the overall Jacobian that relates
@@ -157,7 +157,7 @@ class ExCost : public CostTerm {
     return -std::pow(x(1) - 2, 2);
   };
 
-  void FillJacobianBlock(std::string var_set, Jacobian& jac) const override
+  void FillJacobianBlock(const std::string& var_set, Jacobian& jac) const override
   {
     if (var_set == "var_set1") {
       Vector2d x = GetVariables()->GetComponent("var_set1")->GetValues();

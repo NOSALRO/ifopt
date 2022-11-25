@@ -108,7 +108,7 @@ void Composite::ClearComponents()
   SetRows(0);
 }
 
-const Component::Ptr Composite::GetComponent(std::string name) const
+const Component::Ptr Composite::GetComponent(const std::string& name) const
 {
   for (const auto& c : components_)
     if (c->GetName() == name)

@@ -185,7 +185,7 @@ class Composite : public Component {
    * @param  name  The name given to the component.
    * @return A generic pointer of that component.
    */
-  const Component::Ptr GetComponent(std::string name) const;
+  const Component::Ptr GetComponent(const std::string& name) const;
 
   /**
    * @brief  Access type-casted component with the specified name.

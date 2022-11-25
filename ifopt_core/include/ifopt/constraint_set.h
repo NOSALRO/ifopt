@@ -104,7 +104,7 @@ class ConstraintSet : public Component {
    * set as follows (which can also be set =0.0 without erros):
    * jac_block.coeffRef(1, 3) = ... 
    */
-  virtual void FillJacobianBlock(std::string var_set,
+  virtual void FillJacobianBlock(const std::string& var_set,
                                  Jacobian& jac_block) const = 0;
 
  protected:
